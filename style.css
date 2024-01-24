@@ -1,0 +1,204 @@
+/* < ==================== Font Style Link ====================== > */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* < ================= Commun Proprieties ================== > */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+/* < =================== Navbar ================== > */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
+nav .logo img{
+    height: 70px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    list-style-type: none;
+    z-index: 10;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+#menu{
+    width: 35px;
+    z-index: 10;
+    display: none;
+}
+#menu span{
+    display: block;
+    height: 5px;
+    background-color: white;
+    border-radius: 20PX;
+    margin: 5px 0;
+    transition: .4s;
+}
+#menu span:nth-child(1).active{
+    transform: translateY(5px) rotate(45deg);
+}
+#menu span:nth-child(2).active{
+    display: none;
+}
+#menu span:nth-child(3).active{
+    transform: translateY(-5px) rotate(-45deg);
+}
+/* < ================= Home ================== > */
+.Home{
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Home .home__text{
+    padding-top: 5rem;
+    width: 50%;
+    color: white;
+}
+.Home .home__text h1{
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+.Home .home__text p{
+    margin: 1.5rem 0 2.5rem 0; 
+    width: 80%;
+}
+.Home .home__text a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: .7rem 1.2rem;
+    border-radius: 30px;
+}
+.Home .home__img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.Home .home__img img{
+    height: 420px;
+}
+/* < ================= Iphones ================== > */
+.iphones{
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.iphones img{
+    height: 90px;
+    transition: .4s;
+}
+.iphones img:hover{
+    transform: scale(1.2);
+}
+/* < ================= Breakpoints ================== > */
+/* --- xsmall device --- */
+@media screen and (width <= 576px) {
+    nav ul{
+        backdrop-filter: blur(150px);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        padding-top: 6rem;
+        gap: 3rem;
+        transition: .4s;
+    }
+    nav ul.active{
+        right: 0;
+    }
+    #menu{
+        display: block;
+    }
+    .Home .home__img,
+    .Home .home__text{
+        padding-top: 1rem;
+        width: 100%;
+    }
+    .Home .home__text h1{
+        font-size: 1.8rem;
+    }
+    .Home .home__text p{
+        margin: .5REM 0 2REM 0; 
+        width: 100%;
+    }
+    .Home .home__img img{
+        margin-top: -80px;
+        height: 350px;
+    }
+    .iphones img{
+        height: 60px;
+    }
+}
+/* --- small device --- */
+@media screen and ( 577px <= width <= 768px) {
+    nav ul{
+        backdrop-filter: blur(150px);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 70%;
+        flex-direction: column;
+        padding-top: 6rem;
+        gap: 3rem;
+        transition: .4s;
+    }
+    nav ul.active{
+        right: 0;
+    }
+    #menu{
+        display: block;
+    }
+    .Home .home__img,
+    .Home .home__text{
+        width: 100%;
+    }
+    .Home .home__img img{
+        margin-top: -120px;
+    }
+}
+/* --- meduim device --- */
+@media screen and ( 769px <= width <= 991px) {
+    nav ul{
+        backdrop-filter: blur(150px);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 60%;
+        flex-direction: column;
+        padding-top: 6rem;
+        gap: 3rem;
+        transition: .4s;
+    }
+    nav ul.active{
+        right: 0;
+    }
+    #menu{
+        display: block;
+    }
+    .Home .home__text{
+        width: 70%;
+    }
+    .Home .home__img{
+        width: 30%;
+    }
+}
